@@ -238,6 +238,34 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
-    
-    
+    if (getQueryParam('niawebDeleteFailed') === 'true') {
+        Swal.fire({
+            icon: 'error',
+            title: 'Delete video failed',
+            text: '',
+            confirmButtonText: 'OK',
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const newUrl = window.location.origin + window.location.pathname;
+                window.history.replaceState({}, document.title, newUrl);
+            }
+        });
+    }
+    if (getQueryParam('niawebDeleteSuccess') === 'true') {
+        Swal.fire({
+            icon: 'success',
+            title: 'Delete video success',
+            text: '',
+            confirmButtonText: 'OK',
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const newUrl = window.location.origin + window.location.pathname;
+                window.history.replaceState({}, document.title, newUrl);
+            }
+        });
+    }
 });
