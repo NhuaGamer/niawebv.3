@@ -178,7 +178,7 @@ app.get("/admin/deleteAllV", (req, res) => {
             const resetAutoIncrementQuery = "ALTER TABLE urlvideo AUTO_INCREMENT = 1";
             db.query(resetAutoIncrementQuery, (err, result) => {
                 if (err) throw err;
-                res.redirect("/admin/deleteV?niawebSuccessDeleteAll=true");
+                res.redirect("/admin/deleteV?niawebDeleteSuccess=true");
             });
         }
     });
